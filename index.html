@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Item Price Calc</title>
+  <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./scss/css/main.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Item Price Calc</div>
+    <input type="checkbox" id="ch" />
+    <label for="ch" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <label for="ch" class="overlay"></label>
+    <nav>
+      <label for="ch" class="close">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul>
+        <li><a href="aluminum-calcs.github.io/">Home</a></li>
+        <li><a href="aluminum-calcs.github.io/glass-price-calc/">Glass Price Calc</a></li>
+        <li><a href="aluminum-calcs.github.io/sliding-window-calc/">Aluminum Channels</a></li>
+        <li><a href="#">Visit Ohons Tech </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form class="input">
+      <div class="name group">
+        <div class="field">
+          <label for="name">item name</label>
+          <input type="text" id="name" placeholder="Roller" list="itemlist" value="Roller"/>
+        </div>
+        <div class="error-m">A valid item in our list please</div>
+      </div>
+      <div class="qty group">
+        <div class="field">
+          <label for="qty">quantity</label>
+          <input type="number" id="qty" placeholder="1" value="1"/>
+        </div>
+        <div class="error-m">A valid Quantity</div>
+      </div>
+      <div class="price group">
+        <div class="field">
+          <label for="price">Price</label>
+          <input type="number" id="price" placeholder="1000" value="1000"/>
+        </div>
+        <div class="error-m">You can set a custom price for this item</div>
+      </div>
+      <div class="links">
+        <button id="submit">Add</button>
+        <button id="submit-new">Add to New Cart</button>
+      </div>
+
+      <datalist id="itemlist">
+        <option value="roller">Roller</option>
+        <option value="handle">Handle</option>
+        <option value="width">Width Channel</option>
+      </datalist>
+    </form>
+    <section class="carts">
+      <div class="cart">
+        <div class="header">
+          <h2 class="cart-name">Cart 1</h2>
+          <div class="cart-tools">
+            <button><i class="fa fa-refresh"></i></button>
+            <button><i class="fa fa-pencil"></i></button>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>s/n</th>
+              <th>Item name</th>
+              <th>qty</th>
+              <th colspan="2">price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Roller</td>
+              <td>1000(×1)</td>
+              <td>1000</td>
+              <td>×</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>width-channel</td>
+              <td>17800(×2)</td>
+              <td>35600</td>
+              <td>×</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total</td>
+              <td colspan="2">36,600</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+  <!-- TEMPLATES -->
+  <template id="modal-popup">
+    <div class="modal-popup">
+      <div class="overlay"></div>
+      <div class="modal">
+        <div class="modal__header">
+          <h2 class="h2">Heading</h2>
+          <button class="close-modal"><i class="fa fa-close"></i></button>
+        </div>
+        <div class="modal__body">
+          <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, nihil.</p>
+          <div class="modal__body__input">
+            <div class="field">
+              <label for="modal-input">name</label>
+              <input type="text" placeholder="Cart 1" class="modal-input-elem"/>
+            </div>
+            <div class="error-msg">We will use the default name if its empty</div>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button>Yes</button>
+          <button>No</button>
+          <button>maybe</button>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="cart">
+    <div class="cart">
+      <div class="header">
+        <h2 class="cart-name">Cart 1</h2>
+        <div class="cart-tools">
+          <button><i class="fa fa-refresh"></i></button>
+          <button><i class="fa fa-pencil"></i></button>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>s/n</th>
+            <th>Item name</th>
+            <th>qty</th>
+            <th colspan="2">price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Roller</td>
+            <td>1000(×1)</td>
+            <td>1000</td>
+            <td>×</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>width-channel</td>
+            <td>17800(×2)</td>
+            <td>35600</td>
+            <td>×</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total</td>
+            <td colspan="2">36,600</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </template>
+
+  <script src="./scripts/form.js" type="module"></script>
+</body>
+</html>

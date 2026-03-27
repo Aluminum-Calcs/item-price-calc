@@ -1,0 +1,42 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="Page-1" id="BLr4gkfskAv6DjnWKtGh">
+    <mxGraphModel dx="1426" dy="865" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-7" edge="1" parent="1" source="sqFcq3gEw4-Z35xr04V3-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sqFcq3gEw4-Z35xr04V3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;" value="&lt;b&gt;Control Memory&lt;/b&gt;&lt;div&gt;&lt;b&gt;(CM)&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="270" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-5" edge="1" parent="1" source="sqFcq3gEw4-Z35xr04V3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sqFcq3gEw4-Z35xr04V3-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-8" edge="1" parent="1" source="sqFcq3gEw4-Z35xr04V3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sqFcq3gEw4-Z35xr04V3-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="300" />
+            </Array>
+            <mxPoint x="240" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;" value="&lt;b&gt;Sequencing Logic&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="110" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-6" edge="1" parent="1" source="sqFcq3gEw4-Z35xr04V3-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sqFcq3gEw4-Z35xr04V3-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;" value="&lt;b&gt;Control Adress Register&lt;/b&gt;&lt;div&gt;&lt;b&gt;(CAR)&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="270" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;" value="&lt;b&gt;Control Buffer Register&lt;/b&gt;&lt;div&gt;&lt;b&gt;(CBR)&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="270" y="354" as="geometry" />
+        </mxCell>
+        <mxCell id="sqFcq3gEw4-Z35xr04V3-9" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Read&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="50" x="175" y="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

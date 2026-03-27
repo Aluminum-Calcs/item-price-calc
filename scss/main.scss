@@ -1,0 +1,353 @@
+
+:root {
+  --sp: clamp(20px, 5dvw, 10%);
+  --txt: #121212;
+  --bg: beige;
+  --medium: #ccc;
+
+  --error: crimson;
+  --correct: goldenrod;
+  --active: blue;
+}
+
+@mixin df($j: normal, $a: normal, $fl: row, $g: 0) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-flow: $fl;
+  gap: $g;
+}
+@mixin btn($c: var(--txt), $bg:transparent){
+  cursor: pointer;
+  background: $bg;
+  color: $c;
+  border: 1px solid;
+  padding: 5px 20px;
+  text-decoration: none;
+  font: inherit;
+  font-size: 15px;
+  transition: all .3s;
+  text-align: center;
+  @include df(center, center, row, 10px);
+  &:hover {
+    background: $c;
+    border-color: $c;
+    color: #fff;
+  }
+}
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+}
+
+header {
+  padding: 20px var(--sp);
+  background: var(--txt);
+  color: var(--bg);
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  @include df(space-between, center, row, 10px);
+  .logo {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  #ch {
+    display: none;
+  }
+  .overlay {
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all .3s;
+    transform: translateY(100%);
+    background: rgba(#000,.3);
+  }
+  .hamburger {
+    transition: all .5s;
+    @include df(normal, normal, column, 4px);
+    span {
+      width: 25px;
+      height: 3px;
+      background: var(--bg);
+    }
+  }
+  nav {
+    padding: 20px var(--sp);
+    position: fixed;
+    z-index: 7;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: all .5s;
+    background: var(--txt);
+    color: var(--bg);
+    @include df(normal, flex-end, column, 20px);
+    .close {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      transition: all .3s;
+      @include df(center, center);
+      &:hover {
+        background: rgba(#ccc, .3);
+      }
+      span {
+        width: 25px;
+        height: 3px;
+        background: var(--bg);
+        position: absolute;
+        transform: rotate(45deg);
+        &:nth-of-type(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    ul {
+      align-self: start;
+      @include df(normal, start, column, 20px);
+      li {
+        @include df(normal, start, column, 20px);
+        a {
+          @include btn(var(--bg));
+        }
+      }
+    }
+  }
+  #ch:checked {
+    ~ nav {
+      transform: translateY(0);
+    }
+    ~ .hamburger {
+      opacity: 0;
+    }
+    ~ .overlay{
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+main {
+  padding-top: 70px;
+}
+
+.input {
+  padding: 20px var(--sp);
+  border-bottom: 1px solid var(--medium);
+  @include df(normal, normal, column, 20px);
+  .group {
+    @include df(normal, normal, column, 5px);
+    .field {
+      position: relative;
+      @include df(normal, normal, column);
+      label {
+        position: absolute;
+        top: 0;
+        background: #fff;
+        padding: 0 5px;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+      input {
+        width: 100%;
+        padding: 20px 20px 15px 20px;
+        font: inherit;
+        font-size: 1.5rem;
+        font-weight: 700;
+        border-radius: none;
+        border: 1px solid;
+        outline: none;
+        &:focus {
+          border-color: green;
+        }
+      }
+    }
+    .error-m {
+      opacity: 0;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all .3s;
+      @include df(normal, center, row, 10px);
+      &::before {
+        content: '!';
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+        background: var(--bg);
+        border: 1px solid;
+        border-radius: 50%;
+        font-weight: 600;
+        @include df(center, center);
+      }
+    }
+    &:focus-within {
+      .field {
+        label {
+          color: green;
+        }
+      }
+      .error {
+        color: green;
+      }
+    }
+    &.error {
+      .field {
+        input {
+          border-color: crimson;
+        }
+        label {
+          color: crimson;
+        }
+      }
+      .error-m {
+        opacity: 1;
+        color: crimson;
+        &::before {
+          background: rgba(crimson,.1);
+        }
+      }
+    }
+  }
+  .links {
+    width: 100%;
+    @include df(normal, normal, row, 15px);
+    >* {
+      @include btn;
+    }
+    button:first-of-type {
+      flex: 1;
+    }
+    button:last-of-type {
+      flex: 2;
+    }
+  }
+}
+.carts {
+  @include df(normal, normal, column);
+  .cart {
+    padding: 20px var(--sp);
+    @include df(normal, normal, column, 20px);
+    .header {
+      @include df(space-between, center, row, 20px);
+      .cart-tools {
+        @include df(normal, normal, row, 15px);
+        button {
+          @include btn;
+        }
+      }
+    }
+  }
+}
+table {
+  font-size: 15px;
+  border-collapse: collapse;
+  thead {
+    border: 1px solid;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  tbody {
+    td:nth-of-type(3) {
+      font-weight: 700;
+    }
+  }
+  td,th {
+    border: 1px solid;
+    padding: 10px;
+  }
+}
+.modal-popup {
+  position: fixed;
+  z-index: 15;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px var(--sp);
+  @include df(center, center);
+  .overlay {
+    background: rgba(#000,.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modal {
+    border: 1px solid;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+    padding: 30px;
+    @include df(normal, normal, column, 20px);
+    &__header {
+      @include df(space-between, center, row, 10px);
+      button {
+        @include btn;
+      }
+    }
+    &__body {
+      @include df(normal, normal, column, 15px);
+      &__input {
+        @include df(normal, normal, column, 10px);
+        .field {
+          position: relative;
+          @include df(normal, normal, column);
+          label {
+            position: absolute;
+            top: 0;
+            left: 15px;
+            background: #fff;
+            transform: translateY(-50%);
+            padding: 0 5px;
+            text-transform: capitalize;
+          }
+          input {
+            padding: 20px 20px 15px 15px;
+            font: inherit;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border: 1px solid;
+          }
+        }
+        .error-msg {
+          @include df(normal, center, row, 5px);
+          &::before {
+            content: '!';
+            width: 25px;
+            height: 25px;
+            border: 1px solid;
+            border-radius: 50%;
+            @include df(center, center);
+          }
+        }
+      }
+    }
+    &__footer {
+      @include df(space-beetween, normal, row, 10px);
+      button {
+        flex: 1;
+        text-transform: capitalize;
+        @include btn;
+      }
+    }
+  }
+}
