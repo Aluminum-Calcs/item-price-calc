@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "manrope";
+  src: url("../../assets/fonts/manrope.ttf");
+}
 :root {
   --sp: clamp(20px, 5dvw, 10%);
   --txt: #121212;
@@ -15,13 +19,13 @@
 }
 
 body {
-  font-family: monospace;
+  font-family: "cascadia code", monospace;
 }
 
 header {
   padding: 20px var(--sp);
-  background: var(--txt);
-  color: var(--bg);
+  background: var(--bg);
+  border-bottom: 1px solid var(--medium);
   position: fixed;
   z-index: 5;
   top: 0;
@@ -35,7 +39,11 @@ header {
 }
 header .logo {
   font-weight: 700;
-  text-transform: uppercase;
+  display: flex;
+  justify-content: normal;
+  align-items: start;
+  flex-flow: column;
+  gap: 0;
 }
 header #ch {
   display: none;
@@ -61,8 +69,8 @@ header .hamburger {
 }
 header .hamburger span {
   width: 25px;
-  height: 3px;
-  background: var(--bg);
+  height: 4px;
+  background: #121212;
 }
 header nav {
   padding: 20px var(--sp);
@@ -154,7 +162,7 @@ header #ch:checked ~ .overlay {
 }
 
 main {
-  padding-top: 70px;
+  padding-top: 100px;
 }
 
 .input {
@@ -347,6 +355,15 @@ table thead {
   border: 1px solid;
   text-transform: uppercase;
   text-align: left;
+}
+table tbody {
+  counter-reset: table;
+}
+table tbody tr {
+  counter-increment: table;
+}
+table tbody tr td:nth-of-type(1)::before {
+  content: counter(table);
 }
 table tbody td:nth-of-type(3) {
   font-weight: 700;

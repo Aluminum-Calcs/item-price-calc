@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1" pages="2">
   <diagram name="Page-1" id="BLr4gkfskAv6DjnWKtGh">
     <mxGraphModel dx="895" dy="340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -233,6 +233,29 @@
         </mxCell>
         <mxCell id="Q5mOURac-_4h9a6dpRq2-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;" value="&lt;b&gt;Returns object containing answers&lt;/b&gt;" vertex="1">
           <mxGeometry height="60" width="310" x="940" y="635" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="G4uYCriVJ7xfkgldsOFp" name="Page-2">
+    <mxGraphModel dx="1426" dy="865" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Pwv2r6tSjaA11w3Yyqgr-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontStyle=1" value="get the data from local storage" vertex="1">
+          <mxGeometry height="60" width="250" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Pwv2r6tSjaA11w3Yyqgr-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontStyle=1" value="Loop through the data and for each rendercart( )" vertex="1">
+          <mxGeometry height="60" width="250" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Pwv2r6tSjaA11w3Yyqgr-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontStyle=1;verticalAlign=top;" value="rendercart(cart)" vertex="1">
+          <mxGeometry height="110" width="250" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Pwv2r6tSjaA11w3Yyqgr-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="for ech item in the cart render item on the table and increment a sum value" vertex="1">
+          <mxGeometry height="50" width="250" x="40" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="Pwv2r6tSjaA11w3Yyqgr-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="add the sum data to the total" vertex="1">
+          <mxGeometry height="60" width="170" x="80" y="290" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

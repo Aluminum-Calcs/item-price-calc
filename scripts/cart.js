@@ -6,6 +6,7 @@ let [carts_info, carts] = (cart_data.length == 0) ? [{
   current: 0
 }, [
   {
+    name: 'Cart 0',
     id: 0,
     items: []
   }
@@ -64,6 +65,7 @@ async function createNewCart(item) {
   )
   if (ans.decision != null) {
     let cart_obj = {
+      name: ans.cartName,
       id: carts.length,
       items: []
     }
