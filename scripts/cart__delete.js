@@ -4,7 +4,6 @@ import { updateCartData } from "./cart.js";
 import { displayCart } from "./cart__display.js";
 
 export function startListeningForCartDeletion() {
-  localStorage.clear()
   let carts = sel('.cart', true);
   if (carts) {
     carts.forEach(cart => {
