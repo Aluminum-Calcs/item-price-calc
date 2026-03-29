@@ -92,7 +92,7 @@
       <div class="name group">
         <div class="field">
           <label for="name">item name</label>
-          <input type="text" id="name" placeholder="Roller" list="itemlist" value="Roller"/>
+          <input type="text" id="name" placeholder="Roller" value="Roller"/>
         </div>
         <div class="error-m">A valid item in our list please</div>
       </div>
@@ -114,55 +114,8 @@
         <button id="submit">Add</button>
         <button id="submit-new">Add to <b>New</b> Cart</button>
       </div>
-
-      <datalist id="itemlist">
-        <option value="Roller">Roller</option>
-        <option value="Handle">Handle</option>
-        <option value="Width">Width</option>
-      </datalist>
     </form>
     <section class="carts">
-      <!-- <div class="cart">
-        <div class="header">
-          <h2 class="cart-name">Cart 1</h2>
-          <div class="cart-tools">
-            <button><i class="fa fa-refresh"></i></button>
-            <button><i class="fa fa-pencil"></i></button>
-          </div>
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>s/n</th>
-              <th>Item name</th>
-              <th>qty</th>
-              <th colspan="2">price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Roller</td>
-              <td>1000(×1)</td>
-              <td>1000</td>
-              <td>×</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>width-channel</td>
-              <td>17800(×2)</td>
-              <td>35600</td>
-              <td>×</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3">Total</td>
-              <td colspan="2">36,600</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div> -->
     </section>
   </main>
 
@@ -248,8 +201,8 @@
   </template>
 
   <script src="./scripts/loader.js" type="module"></script>
-  <script src="./scripts/list.js" type="module"></script>
   <script src="./scripts/form.js" type="module"></script>
+  <script src="./scripts/form__autofill.js" type="module"></script>
   <script src="./scripts/cart__edit.js" type="module" defer></script>
   <script src="./scripts/cart__delete.js" type="module" defer></script>
 </body>

@@ -6,6 +6,11 @@
     "qty": 200
   },
   {
+    "name": "handle",
+    "price": 1000,
+    "qty": 26
+  },
+  {
     "name": "hinge",
     "price": 2000,
     "qty": 52
