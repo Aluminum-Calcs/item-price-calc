@@ -2,6 +2,10 @@
   font-family: "manrope";
   src: url("../../assets/fonts/manrope.ttf");
 }
+@font-face {
+  font-family: "cascadia-code";
+  src: url("../../assets/fonts/cascadia-code.ttf");
+}
 :root {
   --sp: clamp(20px, 5dvw, 10%);
   --txt: #121212;
@@ -31,7 +35,7 @@
 }
 
 body {
-  font-family: "cascadia code", monospace;
+  font-family: "cascadia-code", monospace;
 }
 
 .loader {

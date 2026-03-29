@@ -3,6 +3,10 @@
   font-family: 'manrope';
   src: url('../../assets/fonts/manrope.ttf');
 }
+@font-face {
+  font-family: 'cascadia-code';
+  src: url('../../assets/fonts/cascadia-code.ttf');
+}
 
 $mini-tab: 500px;
 $tab: 700px;
@@ -59,7 +63,7 @@ $desktop: 1100px;
 }
 
 body {
-  font-family: 'cascadia code',monospace;
+  font-family: 'cascadia-code', monospace;
 }
 
 .loader {
