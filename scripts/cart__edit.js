@@ -5,9 +5,10 @@ import { displayCart } from './cart__display.js';
 
 // Don't mind my naming methods
 export function startListeningForCartRenaming() {
-  let carts = sel('.cart', true);
-  if (carts) {
-    carts.forEach(cart => {
+  let carts_in_dom = sel('.cart', true);
+
+  if (carts_in_dom) {
+    carts_in_dom.forEach(cart => {
       let editbtn = sel('.edit-cart', false, cart);
       if (editbtn) {
         editbtn.addEventListener('click', () => {
@@ -42,4 +43,6 @@ export function startListeningForCartRenaming() {
   }
 }
 
-startListeningForCartRenaming()
+setTimeout(() => {
+  startListeningForCartRenaming()
+})

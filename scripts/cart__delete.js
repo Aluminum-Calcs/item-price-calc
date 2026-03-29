@@ -24,9 +24,11 @@ export function startListeningForCartDeletion() {
     //-----------Renaming
     let reply = await modal(
       ['Delete Cart', `Are you sure you want to delete <b>${carts_in_local[cart_id].name}</b><br>No going back!.`],
-      ['Yes', 'no, cancel']
+      ['yes', 'no, cancel']
     );
-    if ((reply.decision).toLowerCase() == 'yes') {
+    const { decision } = reply;
+    if (decision == 'yes') {
+      console.log(decision)
       //Do the main stuff here
       //Look for it in the stack
       //remove it
@@ -43,4 +45,6 @@ export function startListeningForCartDeletion() {
   }
 }
 
-startListeningForCartDeletion();
+setTimeout(() => {
+  startListeningForCartDeletion();
+})
