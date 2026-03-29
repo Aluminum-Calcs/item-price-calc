@@ -10,31 +10,33 @@
 </head>
 <body>
   <header>
-    <div class="logo">
-      <h2>Aluminum Calc</h2>
-      <span>Item Price Calc</span>
-    </div>
-    <input type="checkbox" id="ch" />
-    <label for="ch" class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <label for="ch" class="overlay"></label>
-    <nav>
-      <label for="ch" class="close">
+    <div class="wrapper">
+      <div class="logo">
+        <h2>Aluminum Calc</h2>
+        <span>Item Price Calc</span>
+      </div>
+      <input type="checkbox" id="ch" />
+      <label for="ch" class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </label>
-
-      <ul>
-        <li><a href="aluminum-calcs.github.io/">Home</a></li>
-        <li><a href="aluminum-calcs.github.io/glass-price-calc/">Glass Price Calc</a></li>
-        <li><a href="aluminum-calcs.github.io/sliding-window-calc/">Aluminum Channels</a></li>
-        <li><a href="ehiejakhian.github.io/OHONS-TECH/">Visit Ohons Tech </a></li>
-      </ul>
-    </nav>
+      <label for="ch" class="overlay"></label>
+      <nav>
+        <label for="ch" class="close">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+  
+        <ul>
+          <li><a href="aluminum-calcs.github.io/">Home</a></li>
+          <li><a href="aluminum-calcs.github.io/glass-price-calc/">Glass Price Calc</a></li>
+          <li><a href="aluminum-calcs.github.io/sliding-window-calc/">Aluminum Channels</a></li>
+          <li><a href="ehiejakhian.github.io/OHONS-TECH/">Visit Ohons Tech </a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -62,11 +64,11 @@
       </div>
       <div class="links">
         <button id="submit">Add</button>
-        <button id="submit-new">Add to New Cart</button>
+        <button id="submit-new">Add to <b>New</b> Cart</button>
       </div>
 
       <datalist id="itemlist">
-        <option value="roller">Roller</option>
+        <option value="Roller">Roller</option>
         <option value="handle">Handle</option>
         <option value="width">Width Channel</option>
       </datalist>
@@ -148,7 +150,7 @@
         <h2 class="cart-name">Cart 1</h2>
         <div class="cart-tools">
           <button><i class="fa fa-refresh"></i></button>
-          <button><i class="fa fa-pencil"></i></button>
+          <button class="edit-cart" title="Rename cart"><i class="fa fa-pencil"></i></button>
         </div>
       </div>
       <table class="table">
@@ -186,6 +188,8 @@
     </div>
   </template>
 
+  <script src="./scripts/list.js" type="module"></script>
   <script src="./scripts/form.js" type="module"></script>
+  <script src="./scripts/cart__edit.js" type="module" defer></script>
 </body>
 </html>

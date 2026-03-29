@@ -1,9 +1,9 @@
 import { sel } from "./util/methods.js";
 
-let cart_temp = sel('#cart');
-cart_temp = cart_temp.content;
-
 export function displayCart() {
+  let cart_temp = sel('#cart');
+  cart_temp = cart_temp.content;
+
   //------ Fetch from storage and destructure
   let cart_data = JSON.parse(localStorage.getItem('SIC-cart-data')) || [];
   let [carts_info, carts] = cart_data;
@@ -13,7 +13,6 @@ export function displayCart() {
   
   /* ----Loop throught each cart in carts ---- */
   if (carts) {
-    console.log('rendering carts')
     carts.forEach(el => {
       renderCart(el);
     });
@@ -25,7 +24,6 @@ export function displayCart() {
     sel('.cart', false, clone).setAttribute('data-id', cart.id);
     sel('.cart-name', false, clone).textContent = cart.name;
     if (cart.items) {
-      console.log('rendering items')
       let total_price = 0;
       let body = sel('tbody', false, clone);
       body.innerHTML = '';

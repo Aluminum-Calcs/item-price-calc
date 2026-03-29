@@ -4,6 +4,10 @@
   src: url('../../assets/fonts/manrope.ttf');
 }
 
+$mini-tab: 500px;
+$tab: 700px;
+$desktop: 1100px;
+
 :root {
   --sp: clamp(20px, 5dvw, 10%);
   --txt: #121212;
@@ -22,7 +26,7 @@
   flex-flow: $fl;
   gap: $g;
 }
-@mixin btn($c: var(--txt), $bg:transparent){
+@mixin btn($c: var(--txt), $bg:var(--bg)){
   cursor: pointer;
   background: $bg;
   color: $c;
@@ -60,9 +64,16 @@ header {
   top: 0;
   right: 0;
   left: 0;
-  @include df(space-between, center, row, 10px);
+  @include df(normal, normal);
+  .wrapper {
+    width: 100%;
+    @include df(space-between, center, row, 10px);
+    @media (min-width: $desktop) {
+      max-width: $desktop;
+      margin: 0 auto;
+    }
+  }
   .logo {
-    font-weight: 700;
     @include df(normal, start, column);
   }
   #ch {
@@ -149,10 +160,22 @@ main {
   padding-top: 100px;
 }
 
-.input {
+form.input {
   padding: 20px var(--sp);
   border-bottom: 1px solid var(--medium);
   @include df(normal, normal, column, 20px);
+  @media (min-width: $desktop) {
+    padding: 20px 0;
+    max-width: $desktop;
+    margin: 0 auto;
+  }
+  @media (min-width: $tab) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .price,.links {
+      grid-column: 1/-1;
+    }
+  }
   .group {
     @include df(normal, normal, column, 5px);
     .field {
@@ -231,8 +254,9 @@ main {
   }
   .links {
     width: 100%;
-    @include df(normal, normal, row, 15px);
+    @include df(normal, normal, row wrap, 15px);
     >* {
+      min-width: 200px;
       @include btn;
     }
     button:first-of-type {
@@ -244,7 +268,11 @@ main {
   }
 }
 .carts {
-  @include df(normal, normal, column);
+  @include df(normal, normal, column, 20px);
+  @media (min-width: $mini-tab) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
   .cart {
     padding: 20px var(--sp);
     @include df(normal, normal, column, 20px);
@@ -256,6 +284,14 @@ main {
           @include btn;
         }
       }
+    }
+  }
+  @media (min-width: $desktop) {
+    width: 100%;
+    max-width: $desktop;
+    margin: 0 auto;
+    .cart {
+      padding: 20px 0;
     }
   }
 }

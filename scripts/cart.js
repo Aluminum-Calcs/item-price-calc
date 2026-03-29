@@ -39,7 +39,7 @@ function addToCart(item, cart_id = carts_info.current) {
     console.log('adding an item to an existing cart: ', cart_id)
     console.log(carts[cart_id].items)
     carts[cart_id].items.push(item);
-    updateCartData();
+    updateCartData(carts_info, carts);
     displayCart();
   } else {
     /* A whole non-existing cart was selected on looked for 
@@ -75,8 +75,8 @@ async function createNewCart(item) {
   }
 }
 
-function updateCartData() {
+export function updateCartData(carts_info, carts) {
   //Push to local storage;
   // console.log([carts_info, carts])
-  localStorage.setItem('SIC-cart-data',JSON.stringify([carts_info, carts]))
+  localStorage.setItem('SIC-cart-data', JSON.stringify([carts_info, carts]))
 }
