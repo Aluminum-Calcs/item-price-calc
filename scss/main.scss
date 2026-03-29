@@ -137,7 +137,7 @@ header {
       li {
         @include df(normal, start, column, 20px);
         a {
-          @include btn(var(--bg));
+          @include btn();
         }
       }
     }
@@ -397,6 +397,26 @@ table {
         flex: 1;
         text-transform: capitalize;
         @include btn;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 20px var(--sp);
+  border-top: 1px solid var(--medium);
+  background: var(--bg);
+  @include df(center, center);
+  &__content {
+    width: 100%;
+    @include df(center, center, column, 10px);
+    p {
+      @include df(center, center, column, 5px);
+      a {
+        @include btn;
+        & {
+          background: #fff;
+        }
       }
     }
   }

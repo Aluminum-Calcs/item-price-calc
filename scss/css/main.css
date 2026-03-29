@@ -144,7 +144,7 @@ header nav ul li {
 header nav ul li a {
   cursor: pointer;
   background: var(--bg);
-  color: var(--bg);
+  color: var(--txt);
   border: 1px solid;
   padding: 5px 20px;
   text-decoration: none;
@@ -159,8 +159,8 @@ header nav ul li a {
   gap: 10px;
 }
 header nav ul li a:hover {
-  background: var(--bg);
-  border-color: var(--bg);
+  background: var(--txt);
+  border-color: var(--txt);
   color: #fff;
 }
 header #ch:checked ~ nav {
@@ -571,4 +571,55 @@ table td, table th {
   background: var(--txt);
   border-color: var(--txt);
   color: #fff;
+}
+
+.footer {
+  padding: 20px var(--sp);
+  border-top: 1px solid var(--medium);
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
+}
+.footer__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+}
+.footer__content p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 5px;
+}
+.footer__content p a {
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--txt);
+  border: 1px solid;
+  padding: 5px 20px;
+  text-decoration: none;
+  font: inherit;
+  font-size: 15px;
+  transition: all 0.3s;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.footer__content p a:hover {
+  background: var(--txt);
+  border-color: var(--txt);
+  color: #fff;
+}
+.footer__content p a {
+  background: #fff;
 }/*# sourceMappingURL=main.css.map */
