@@ -13,8 +13,8 @@ export function modal([heading,message], options, input) {
     //-----------------------------------------//
     // Start adding text content of the modal
     /* Header ----------- */
-    sel('.h2', false, clone).textContent = heading;
-    sel('.message', false, clone).textContent = message;
+    sel('.h2', false, clone).innerHTML = heading;
+    sel('.message', false, clone).innerHTML = message;
     
     /* Body and Input ------- */
     if (input != undefined /*|| !isEmpty(input) */|| input != null) {

@@ -4,11 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Item Price Calc</title>
+  <meta name="title" content="Aluminum Calc | Item Price Calc" />
+  <link rel="shortcut icon" href="./assets/images/logos/logo.png" type="image/x-icon">
+  <title>Aluminum Calc | Item Price Calc</title>
+
+  <meta 
+    name="description" 
+    content="Hey there! I'm Ehi Ejakhian — a curious Front-end Developer and Arduino tinkerer. This is a part of a project of mine which I hope makes calculating items bought in aluminum stores easier. Feel free to check it out and use it."
+  />
+  <meta 
+    name="keywords" 
+    content="Ehi, ehiejakhian, Ejakhian, Front-end, web development, Web developer, html, scss, javascript, Ehi Ejakhian, ehi, Ejakhian Ehi, ejakhian ehi, ejakhianehi, aluminum, aluminum fabrication, ohons tech"
+  />
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="theme-color" content="#fff">
+  <meta name="author" content="Ehi Ejakhian">
+
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aluminum-calcs.github.io/item-price-calc/" />
+  <meta property="og:title" content="Aluminum Calc | Item Price Calc">
+  <meta 
+    property="og:description" 
+    content="Hey there! I'm Ehi Ejakhian — a curious Front-end Developer and Arduino tinkerer. This is a part of a project of mine which I hope makes calculating items bought in aluminum stores easier. Feel free to check it out and use it."
+  />
+  <meta property="og:image" content="https://aluminum-calcs.github.io/item-price-calc/assets/images/logos/logo.png">
+
+  <!-- X (Twitter) -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:url" content="https://aluminum-calcs.github.io/" />
+  <meta property="twitter:title" content="Aluminum Calc | Item Price Calc" />
+  <meta 
+    property="twitter:description" 
+    content="Hey there! I'm Ehi Ejakhian — a curious Front-end Developer and Arduino tinkerer. This is a part of a project of mine which I hope makes calculating items bought in aluminum stores easier. Feel free to check it out and use it."
+  />
+  <meta property="twitter:image" content="https://aluminum-calcs.github.io/item-price-calc/assets/images/logos/logo.png" />
+
+  <!-- 77777777 -->
+
+  <!-- STYLESHEETS -->
   <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./scss/css/main.css" />
 </head>
 <body>
+  <div class="loader active">
+    <div class="content">
+      <svg viewBox="0 0 10 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="9" height="17" stroke="black"/>
+        <path d="M0.5 15.5V26H3V24M9.5 15.5V26H7V24" stroke="black"/>
+      </svg>
+    </div>
+  </div>
+
   <header>
     <div class="wrapper">
       <div class="logo">
@@ -161,7 +209,7 @@
         <div class="cart-tools">
           <button><i class="fa fa-refresh"></i></button>
           <button class="edit-cart" title="Rename cart"><i class="fa fa-pencil"></i></button>
-          <button><i class="fa fa-trash"></i></button>
+          <button class="delete-cart"><i class="fa fa-trash"></i></button>
         </div>
       </div>
       <table class="table">
@@ -199,8 +247,10 @@
     </div>
   </template>
 
+  <script src="./scripts/loader.js" type="module"></script>
   <script src="./scripts/list.js" type="module"></script>
   <script src="./scripts/form.js" type="module"></script>
   <script src="./scripts/cart__edit.js" type="module" defer></script>
+  <script src="./scripts/cart__delete.js" type="module" defer></script>
 </body>
 </html>

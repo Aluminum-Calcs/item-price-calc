@@ -41,6 +41,7 @@ function addToCart(item, cart_id = carts_info.current) {
     carts[cart_id].items.push(item);
     updateCartData(carts_info, carts);
     displayCart();
+
   } else {
     /* A whole non-existing cart was selected on looked for 
       Pop a modal asking the user to create a new cart and name it. This is meant to catch any errors.

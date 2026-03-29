@@ -7,11 +7,23 @@
   --txt: #121212;
   --bg: beige;
   --medium: #ccc;
+  --tl: teal;
   --error: crimson;
   --correct: goldenrod;
   --active: blue;
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 *, *::before, *::after {
   padding: 0;
   margin: 0;
@@ -20,6 +32,27 @@
 
 body {
   font-family: "cascadia code", monospace;
+}
+
+.loader {
+  position: fixed;
+  z-index: 8;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: var(--bg);
+  display: none;
+}
+.loader.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+}
+.loader svg {
+  width: 50px;
 }
 
 header {
@@ -172,6 +205,47 @@ header #ch:checked ~ .hamburger {
 header #ch:checked ~ .overlay {
   transform: translateY(0);
   opacity: 1;
+}
+@media (min-width: 900px) {
+  header .overlay, header .hamburger {
+    display: none;
+  }
+  header nav {
+    padding: 0;
+    position: static;
+    transform: translateY(0);
+    transition: all 0.5s;
+    background: transparent;
+    color: var(--bg);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-flow: row;
+    gap: 20px;
+  }
+  header nav .close {
+    display: none;
+  }
+  header nav ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-flow: row;
+    gap: 10px;
+  }
+  header nav ul li:not(:last-of-type) {
+    border-right: 2px solid var(--txt);
+    padding-right: 10px;
+  }
+  header nav ul li a {
+    font-size: 14px;
+    padding: 0;
+    border: none;
+  }
+  header nav ul li a:hover {
+    color: var(--tl);
+    background: transparent;
+  }
 }
 
 main {
@@ -448,6 +522,7 @@ table td, table th {
   z-index: 1;
   background: #fff;
   width: 100%;
+  max-width: 500px;
   padding: 30px;
   display: flex;
   justify-content: normal;
@@ -574,6 +649,7 @@ table td, table th {
 }
 
 .footer {
+  margin-top: 50px;
   padding: 20px var(--sp);
   border-top: 1px solid var(--medium);
   background: var(--bg);

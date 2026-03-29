@@ -6,6 +6,7 @@
 
 $mini-tab: 500px;
 $tab: 700px;
+$big-tab: 900px;
 $desktop: 1100px;
 
 :root {
@@ -13,6 +14,7 @@ $desktop: 1100px;
   --txt: #121212;
   --bg: beige;
   --medium: #ccc;
+  --tl: teal;
 
   --error: crimson;
   --correct: goldenrod;
@@ -44,6 +46,11 @@ $desktop: 1100px;
     color: #fff;
   }
 }
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
 *, *::before, *::after {
   padding: 0;
@@ -53,6 +60,23 @@ $desktop: 1100px;
 
 body {
   font-family: 'cascadia code',monospace;
+}
+
+.loader {
+  position: fixed;
+  z-index: 8;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: var(--bg);
+  display: none;
+  &.active {
+    @include df(center, center, column, 10px);
+  }
+  svg {
+    width: 50px;
+  }
 }
 
 header {
@@ -152,6 +176,41 @@ header {
     ~ .overlay{
       transform: translateY(0);
       opacity: 1;
+    }
+  }
+  @media (min-width: $big-tab) {
+    .overlay,.hamburger {
+      display: none;
+    }
+    nav {
+      padding: 0;
+      position: static;
+      transform: translateY(0);
+      transition: all .5s;
+      background: transparent;
+      color: var(--bg);
+      @include df(right, center, row, 20px);
+      .close {
+        display: none;
+      }
+      ul {
+        @include df(right, center, row, 10px);
+        li {
+          &:not(:last-of-type) {
+            border-right: 2px solid var(--txt);
+            padding-right: 10px;
+          }
+          a {
+            font-size: 14px;
+            padding: 0;
+            border: none;
+            &:hover {
+              color: var(--tl);
+              background: transparent;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -346,6 +405,7 @@ table {
     z-index: 1;
     background: #fff;
     width: 100%;
+    max-width: $mini-tab;
     padding: 30px;
     @include df(normal, normal, column, 20px);
     &__header {
@@ -403,6 +463,7 @@ table {
 }
 
 .footer {
+  margin-top: 50px;
   padding: 20px var(--sp);
   border-top: 1px solid var(--medium);
   background: var(--bg);

@@ -9,9 +9,11 @@ export function startListeningForCartRenaming() {
   if (carts) {
     carts.forEach(cart => {
       let editbtn = sel('.edit-cart', false, cart);
-      editbtn.addEventListener('click', () => {
-        rename(editbtn.closest('.cart'));
-      })
+      if (editbtn) {
+        editbtn.addEventListener('click', () => {
+          rename(editbtn.closest('.cart'));
+        })
+      }
     });
   }
   
@@ -34,9 +36,9 @@ export function startListeningForCartRenaming() {
       carts_in_local[cart_id].name = reply.cartName;
       updateCartData(cart_info, carts_in_local);
       displayCart();
-      //------making it recursive because of the event listeners
-      startListeningForCartRenaming();
     }
+    //------making it recursive because of the event listeners
+    startListeningForCartRenaming();
   }
 }
 
