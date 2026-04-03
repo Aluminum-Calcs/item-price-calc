@@ -2,6 +2,8 @@ import { sel } from './util/methods.js';
 import { modal } from './modal.js';
 import { updateCartData } from './cart.js';
 import { displayCart } from './cart__display.js';
+import { startListeningForCartDeletion } from './cart__delete.js';
+import { startListeningForItemDeletion } from './cart__item__edit.js';
 
 // Don't mind my naming methods
 export function startListeningForCartRenaming() {
@@ -40,6 +42,8 @@ export function startListeningForCartRenaming() {
     }
     //------making it recursive because of the event listeners
     startListeningForCartRenaming();
+    startListeningForCartDeletion();
+    startListeningForItemDeletion();
   }
 }
 

@@ -28,9 +28,9 @@ export function displayCart() {
       let total_price = 0;
       let body = sel('tbody', false, clone);
       body.innerHTML = '';
-      cart.items.forEach(item => {
+      cart.items.forEach((item,i) => {
         body.innerHTML += `
-          <tr>
+          <tr data-id="${i}" parent-id="${cart.id}">
             <td></td>
             <td>${item.name}</td>
             <td>${item.price}(×${item.qt})</td>
