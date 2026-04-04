@@ -32,5 +32,6 @@ export function startListeningForItemDeletion() {
   }
 }
 
-
-startListeningForItemDeletion();
+setTimeout(() => {
+  startListeningForItemDeletion();
+})
